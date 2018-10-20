@@ -1,7 +1,7 @@
 module.exports = {
-  env: 'local',
+  env: 'test',
   port: 3000,
-  enableSwagger: true,
+  enableSwagger: false,
   apiPrefix: '/api',
   publicUrl: {
     host: 'localhost',
@@ -10,6 +10,6 @@ module.exports = {
   },
   database: {
     host: 'localhost',
-    name: 'StarWars',
+    name: 'StarWarsTest',
   }
 };

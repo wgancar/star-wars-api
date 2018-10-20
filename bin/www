@@ -4,13 +4,15 @@ const http = require('http');
 const app = require('../src/app');
 const config = require('../config/config');
 const logger = require('../src/common/services/logger.service');
+const databaseConnection = require('../database/database.connection');
 
 app.set('port', config.port);
 
 const server = http.createServer(app);
-server.listen(config.port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+databaseConnection.once('open', () => server.listen(config.port));
 
 function onError(error) {
   if (error.syscall !== 'listen') {

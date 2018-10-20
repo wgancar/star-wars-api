@@ -9,9 +9,8 @@ const handleGetResponse = async (res, next, resourcePromise) => {
 
 const handleCreationResponse = async (req, res, next, creationResponse) => {
   try {
-    const { _id } = await creationResponse;
-    res.setHeader('Location', req.originalUrl + '/' + resourceId);
-    res.status(201).json({ _id });
+    const newResource = await creationResponse;
+    res.status(201).json(newResource);
   } catch (error) {
     next(error);
   }
@@ -19,8 +18,8 @@ const handleCreationResponse = async (req, res, next, creationResponse) => {
 
 const handleUpdateResponse = async (req, res, next, updateResponse) => {
   try {
-    await updateResponse;
-    res.status(204).send();
+    const updatedResource = await updateResponse;
+    res.status(200).json(updatedResource);
   } catch (error) {
     next(error);
   }

@@ -15,7 +15,9 @@ app.use(bunyanMiddleware({
   logger,
 }));
 
-initSwagger(app);
+if (config.enableSwagger) {
+  initSwagger(app);
+}
 
 app.use(config.apiPrefix, apiRoutes);
 app.use(errorHandler);

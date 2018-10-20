@@ -18,7 +18,7 @@ describe('CharacterController', () => {
       starwarsCharacters.should.eql([{
         name: 'Luke Skywalker',
         episodes: ['NEWHOPE', 'EMPIRE', 'JEDI'],
-        'friends': ['Han Solo', 'Leia Organa', 'C-3PO', 'R2-D2']
+        friends: ['Han Solo', 'Leia Organa', 'C-3PO', 'R2-D2']
       }, {
         name: 'Darth Vader',
         episodes: ['NEWHOPE', 'EMPIRE', 'JEDI'],
