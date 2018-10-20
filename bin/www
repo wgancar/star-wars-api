@@ -3,6 +3,7 @@
 const http = require('http');
 const app = require('../src/app');
 const config = require('../config/config');
+const logger = require('../src/common/services/logger.service');
 
 app.set('port', config.port);
 
@@ -22,11 +23,11 @@ function onError(error) {
 
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      logger.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      logger.error(bind + ' is already in use');
       process.exit(1);
       break;
     default:
@@ -40,5 +41,5 @@ function onListening() {
       'pipe ' + addr :
       'port ' + addr.port;
 
-  console.info(`Listening on: ${bind}`);
+  logger.info(`Listening on: ${bind}`);
 };

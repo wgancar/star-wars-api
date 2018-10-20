@@ -1,4 +1,5 @@
 module.exports = {
+  env: 'local',
   port: 3000,
   apiPrefix: '/api',
   publicUrl: {
