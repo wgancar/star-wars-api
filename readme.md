@@ -9,17 +9,21 @@ Api that maintains star wars characters
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
-## Running the app
+## Running the app locally
 
 ```bash
+# development
+$ yarn start:dev
 
+# production
+$ yarn start
 ```
 
 ## Test
 
 ```bash
-
+$ yarn test
 ```
