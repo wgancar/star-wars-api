@@ -29,6 +29,7 @@ connection.on('disconnected', () => {
 mongoose.connect(`mongodb://${config.database.host}/${config.database.name}`, {
   keepAlive: true,
   useNewUrlParser: true,
+  useCreateIndex: true,
 }).catch(err => logger.error(err));
 
 module.exports = connection;

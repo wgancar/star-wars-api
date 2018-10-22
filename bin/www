@@ -20,8 +20,8 @@ function onError(error) {
   }
 
   const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+    ? 'Pipe ' + config.port
+    : 'Port ' + config.port;
 
   switch (error.code) {
     case 'EACCES':

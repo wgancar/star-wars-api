@@ -1,11 +1,18 @@
-const handleError = (err, req, res, next) => {
-  const { status, message } = transformErrorToHttpException(err);
+const ConflictError = require('../errors/ConflictError');
+const ValidationError = require('../errors/ValidationError');
 
-  res.status(status).json({ status, message });
+const handleError = (err, req, res, next) => {
+  const httpException = transformErrorToHttpException(err);
+
+  res.status(httpException.status).json(httpException);
 };
 
 const transformErrorToHttpException = (error) => {
-  switch(error.type) {
+  switch(error.constructor) {
+    case ValidationError:
+      return { status: 400, message: error.message, type: error.type, details: error.details};
+    case ConflictError:
+      return { status: 400, message: error.message, type: error.type};
     default:
       return { status: 500, message: `Unexpected error: ${error.message}` };
   }

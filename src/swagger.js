@@ -17,7 +17,7 @@ const swaggerOptions = {
     ],
     schemes: [config.publicUrl.schema]
   },
-  apis: ['./src/**/*.controller.js', './src/**/*.model.js']
+  apis: ['./src/**/*.controller.js', './src/**/*.definition.js']
 };
 
 module.exports = app => {
