@@ -1,0 +1,7 @@
+**
+!yarn.lock
+!package.json
+!/config/**
+!/database/**
+!/bin/**
+!/src/**

@@ -17,6 +17,12 @@ const CharacterSchema = new Schema({
       enum: Object.values(Episodes),
     }],
     required: true,
+    validate: {
+      validator: function(value) {
+        return value && value.length > 0
+      },
+      message: 'Character has to have at least one episode assigned',
+    },
   },
   friends: {
     type: [{

@@ -1,4 +1,4 @@
-const Joi = require('Joi');
+const Joi = require('joi');
 const Episodes = require('../../episodes/episodes.enum');
 
 module.exports = Joi.object().keys({

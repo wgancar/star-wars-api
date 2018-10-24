@@ -10,12 +10,10 @@ const swaggerOptions = {
       title: name,
       version
     },
-    host: `${config.publicUrl.host}:${config.publicUrl.port}`,
     basePath: config.apiPrefix,
     produces: [
       'application/json'
     ],
-    schemes: [config.publicUrl.schema]
   },
   apis: ['./src/**/*.controller.js', './src/**/*.definition.js']
 };

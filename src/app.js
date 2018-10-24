@@ -9,11 +9,15 @@ const initSwagger = require('./swagger');
 const errorHandler = require('./common/handlers/error.handler');
 
 const app = express();
+app.disable('x-powered-by');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bunyanMiddleware({
-  logger,
-}));
+
+if (config.env !== 'test') {
+  app.use(bunyanMiddleware({
+    logger,
+  }));
+}
 
 if (config.enableSwagger) {
   initSwagger(app);

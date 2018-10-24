@@ -1,1 +1,2 @@
-require('../database/database.connection');
+const connection = require('../database/database.connection');
+connection.dropDatabase();

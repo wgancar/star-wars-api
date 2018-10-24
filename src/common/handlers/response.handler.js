@@ -16,6 +16,15 @@ const handleCreationResponse = async (req, res, next, creationResponse) => {
   }
 };
 
+const handleActionResponse = async (req, res, next, postResponse) => {
+  try {
+    const postReturnedData = await postResponse;
+    res.status(200).json(postReturnedData);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const handleUpdateResponse = async (req, res, next, updateResponse) => {
   try {
     const updatedResource = await updateResponse;
@@ -25,7 +34,7 @@ const handleUpdateResponse = async (req, res, next, updateResponse) => {
   }
 };
 
-const handleDeletionResponse = async (req, res, next, deletionResponse) => {
+const handleDeletionResponse = async (res, next, deletionResponse) => {
   try {
     await deletionResponse;
     res.status(204).send();
@@ -36,6 +45,7 @@ const handleDeletionResponse = async (req, res, next, deletionResponse) => {
 
 module.exports = {
   handleGetResponse,
+  handleActionResponse,
   handleCreationResponse,
   handleUpdateResponse,
   handleDeletionResponse

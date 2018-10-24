@@ -2,6 +2,7 @@
  * @swagger
  * definitions:
  *  UpdateCharacter:
+ *    properties:
  *      name:
  *        type: string
  *        description: Character's full name

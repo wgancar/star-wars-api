@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const config = require('../config/config');
 const logger = require('../src/common/services/logger.service');
 
+mongoose.set('useFindAndModify', false);
+mongoose.set('runValidators', true);
 mongoose.Promise = global.Promise;
 
 const connection = mongoose.connection;
@@ -26,7 +28,7 @@ connection.on('disconnected', () => {
   logger.info('MongoDB disconnected!');
 });
 
-mongoose.connect(`mongodb://${config.database.host}/${config.database.name}`, {
+mongoose.connect(config.mongodbUri, {
   keepAlive: true,
   useNewUrlParser: true,
   useCreateIndex: true,
