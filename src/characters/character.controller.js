@@ -181,7 +181,7 @@ router.patch('/characters/:characterId', (req, res, next) => {
  * @swagger
  * /characters/{characterId}/friends:
  *  post:
- *    description: Append character's friends
+ *    description: Appends character's friends
  *    tags:
  *      - Characters
  *    produces:
@@ -218,7 +218,7 @@ router.post('/characters/:characterId/friends', (req, res, next) => {
  * @swagger
  * /characters/{characterId}/friends:
  *  delete:
- *    description: Remove given friends from current character's friends array
+ *    description: Removes provided values from existing character's friends
  *    tags:
  *      - Characters
  *    produces:
@@ -255,7 +255,7 @@ router.delete('/characters/:characterId/friends', (req, res, next) => {
  * @swagger
  * /characters/{characterId}/episodes:
  *  post:
- *    description: Append character's episodes
+ *    description: Appends character's episodes
  *    tags:
  *      - Characters
  *    produces:
@@ -293,7 +293,7 @@ router.post('/characters/:characterId/episodes', (req, res, next) => {
  * @swagger
  * /characters/{characterId}/episodes:
  *  delete:
- *    description: Remove given episodes from current character's episodes array
+ *    description: Removes provided values from existing character's episodes
  *    tags:
  *      - Characters
  *    produces:
