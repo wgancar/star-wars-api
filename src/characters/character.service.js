@@ -36,8 +36,7 @@ const getAllCharacters = async (page = 1, pageSize = 10) => {
 
 /**
  * Creates new character
- * @param {{ name: string, episodes: string[], [friends]: string[], [planet]: string
- * }} newCharacter - new character data
+ * @param {{ name: string, episodes: string[], [friends]: string[], [planet]: string }} newCharacter - new character data
  * @returns {Promise<Object>}
  *   Possible rejections
  *    - ValidationError - when trying to add new character that doesn't meet validation schema
