@@ -33,7 +33,7 @@ $ docker-compose up
 ```
 
 ## Test
-
+Before running tests ensure that mongodb instance is running on your local machine on port 27017 ( can be changed in the config file /config/test.js)
 ```bash
 $ yarn test
 ```
